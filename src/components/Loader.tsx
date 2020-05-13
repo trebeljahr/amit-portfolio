@@ -1,7 +1,10 @@
-import React from "react"
 import BounceLoader from "react-spinners/BounceLoader"
 
-export const Loader = ({ loading, color }) => {
+interface LoaderProps {
+  loading: boolean
+  color: string
+}
+export const Loader = ({ loading, color }: LoaderProps) => {
   return (
     <div
       className="spinner-container"

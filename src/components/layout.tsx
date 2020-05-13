@@ -6,10 +6,12 @@ import { ThemeProvider } from "styled-components"
 import { GlobalStyles } from "../global"
 import { theme } from "../theme"
 import "./css/main.css"
-import "./css/desktop.css"
-import "./css/mobile.css"
 
-const Layout = ({ children, color, sub, site }) => {
+interface LayoutProps {
+  children: any
+  color: string
+}
+const Layout = ({ children, color }: LayoutProps) => {
   if (typeof window !== `undefined`) {
     return (
       <ThemeProvider theme={theme}>
@@ -33,12 +35,7 @@ const Layout = ({ children, color, sub, site }) => {
                     backgroundColor: color,
                   }}
                 >
-                  <Navbar
-                    color={color}
-                    desktop={matches.desktop}
-                    sub={sub}
-                    site={site}
-                  />
+                  <Navbar color={color} desktop={matches.desktop} />
                   {children}
                 </div>
               </>

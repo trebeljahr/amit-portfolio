@@ -3,11 +3,11 @@ import { Helmet } from "react-helmet"
 
 const Head = () => {
   return (
-    <Helmet defer={false} defaultTitle="Swantjes Website">
+    <Helmet defer={false} defaultTitle="Amit Meena Copywriter">
       <link
-        href="https://fonts.googleapis.com/css?family=Josefin+Sans:100&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Palanquin:wght@100&display=swap"
         rel="stylesheet"
-      ></link>
+      />
     </Helmet>
   )
 }
