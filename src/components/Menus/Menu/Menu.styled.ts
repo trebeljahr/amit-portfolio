@@ -6,7 +6,7 @@ export const StyledMenu = styled.nav`
   justify-content: flex-start;
   background: ${({ theme }) => theme.primaryLight};
   transform: ${({ open }: { open: boolean }) =>
-    open ? "translateY(0)" : "translateY(-100%)"};
+    open ? "translateX(0)" : "translateX(-100%)"};
   height: 100vh;
   text-align: left;
   padding: 2rem;

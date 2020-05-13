@@ -1,0 +1,39 @@
+body {
+  width: 100vw;
+  height: 100vh;
+}
+.desktop-container,
+.mobile-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects {
+  display: flex;
+}
+.project {
+  display: relative;
+  width: 80px;
+  height: 80px;
+}
+.project-header {
+  display: absolute;
+}
+.project-image {
+  width: 100%;
+  height: auto;
+}
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div {
+  width: 100%;
+}

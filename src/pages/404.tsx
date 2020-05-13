@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 
 const ErrorPage = () => {
   return (
-    <Layout color="white">
+    <Layout>
       <div className="container">
         <h1>404 Oh no. </h1>
         <p>

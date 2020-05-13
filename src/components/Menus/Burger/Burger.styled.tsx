@@ -20,12 +20,8 @@ export const StyledBurger = styled.button`
   span {
     width: 20px;
     height: 1px;
-    background: ${({ theme, open, color }) =>
-      open
-        ? theme.primaryDark
-        : color === "white"
-        ? theme.primaryDark
-        : theme.primaryLight};
+    background: ${({ theme, open }) =>
+      open ? theme.primaryDark : theme.primaryLight};
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
