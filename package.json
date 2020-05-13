@@ -1,0 +1,79 @@
+{
+  "name": "swantje-furtak-webpage",
+  "private": true,
+  "description": "A website for Swantje Furtak",
+  "version": "0.1.0",
+  "author": "Rico Trebeljahr",
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.10.7",
+    "dotenv": "^8.2.0",
+    "gatsby": "^2.18.12",
+    "gatsby-image": "^2.2.34",
+    "gatsby-link": "^2.3.0",
+    "gatsby-plugin-manifest": "^2.3.1",
+    "gatsby-plugin-offline": "^3.0.27",
+    "gatsby-plugin-postcss": "^2.1.18",
+    "gatsby-plugin-react-helmet": "^3.1.18",
+    "gatsby-plugin-sharp": "^2.3.5",
+    "gatsby-plugin-styled-components": "^3.2.1",
+    "gatsby-source-filesystem": "^2.1.40",
+    "gatsby-source-ghost": "^4.0.4",
+    "gatsby-transformer-sharp": "^2.3.7",
+    "postcss-preset-env": "^6.7.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
+    "react-media": "^1.10.0",
+    "react-spinners": "^0.8.1",
+    "styled-components": "^5.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.0",
+    "eslint-config-prettier": "^6.4.0",
+    "husky": "^3.0.8",
+    "lint-staged": "^9.4.1",
+    "prettier": "^1.18.2"
+  },
+  "lint-staged": {
+    "client/src/**/*.{js,jsx, json,ts,tsx,json,css,scss,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "prettier",
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  }
+}
