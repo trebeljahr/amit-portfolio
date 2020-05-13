@@ -5,7 +5,6 @@ import { Navbar } from "./navbar"
 import { ThemeProvider } from "styled-components"
 import { GlobalStyles } from "../global"
 import { theme } from "../theme"
-import "./css/main.css"
 
 interface LayoutProps {
   children: any
