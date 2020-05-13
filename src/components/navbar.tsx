@@ -1,8 +1,5 @@
 import React, { useState } from "react"
 import Link from "gatsby-link"
-import { StaticQuery, graphql } from "gatsby"
-import MobileMenu from "./Menus/MobileMenu"
-import { SubMenu } from "./Menus/Submenu"
 
 interface NavbarProps {
   desktop: boolean
@@ -11,75 +8,17 @@ interface NavbarProps {
 }
 export function Navbar({ desktop = false, color, sub = "" }: NavbarProps) {
   const [subMenu, setSubMenu] = useState(sub)
-  return (
-    <StaticQuery
-      query={graphql`
-        query {
-          films: allGhostPost(
-            filter: { tags: { elemMatch: { name: { eq: "films" } } } }
-          ) {
-            edges {
-              node {
-                title
-                slug
-              }
-            }
-          }
-          texts: allGhostPost(
-            filter: { tags: { elemMatch: { name: { eq: "texts" } } } }
-          ) {
-            edges {
-              node {
-                title
-                slug
-              }
-            }
-          }
-        }
-      `}
-      render={data => {
-        if (!data) {
-          return null
-        }
-        return desktop ? (
-          <DesktopNavbar
-            data={data}
-            subMenu={subMenu}
-            setSubMenu={setSubMenu}
-          />
-        ) : (
-          <MobileMenu
-            data={data}
-            color={color}
-            subMenu={subMenu}
-            setSubMenu={setSubMenu}
-          />
-        )
-      }}
-    ></StaticQuery>
-  )
+  return <DesktopNavbar subMenu={subMenu} setSubMenu={setSubMenu} />
 }
 
-const DesktopNavbar = ({ data, subMenu, setSubMenu }) => {
+interface DesktopNavbarProps {
+  subMenu: string
+  setSubMenu: (e: string) => void
+}
+const DesktopNavbar = ({ subMenu, setSubMenu }: DesktopNavbarProps) => {
   return (
     <>
       <div className="desktop-menu">
-        {data.films && (
-          <SubMenu
-            link="films"
-            menuPoints={data.films.edges}
-            subMenu={subMenu}
-            setSubMenu={setSubMenu}
-          />
-        )}
-        {data.texts && (
-          <SubMenu
-            link="texts"
-            menuPoints={data.texts.edges}
-            subMenu={subMenu}
-            setSubMenu={setSubMenu}
-          />
-        )}
         <h3>
           <Link to="/about" activeStyle={{ color: "grey" }}>
             about
