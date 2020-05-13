@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Rico Trebeljahr",
   "dependencies": {
+    "@types/react-helmet": "^6.0.0",
+    "@types/styled-components": "^5.1.0",
     "babel-plugin-styled-components": "^1.10.7",
     "dotenv": "^8.2.0",
     "gatsby": "^2.18.12",

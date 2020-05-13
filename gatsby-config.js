@@ -7,13 +7,6 @@ module.exports = {
     author: `Amit Meena`,
   },
   plugins: [
-    {
-      resolve: `gatsby-source-ghost`,
-      options: {
-        apiUrl: process.env.GHOST_URL,
-        contentApiKey: process.env.GHOST_CONTENT_API_KEY,
-      },
-    },
     `gatsby-plugin-typescript`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
@@ -29,8 +22,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "Swantje Furtaks Website",
-        short_name: "Swantje Furtaks Website",
+        name: "Amit Meena Copywriter",
+        short_name: "Amit Meena Copywriter",
         start_url: "/",
         background_color: "#19647E",
         theme_color: "#19647E",
