@@ -31,6 +31,32 @@ body {
 .contact-container > h1 {
   grid-area: a;
 }
+.typing-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes blink {
+  0% {
+    background: black;
+  }
+  50% {
+    background: white;
+  }
+  100% {
+    background: black;
+  }
+}
+.blinking-dash {
+  background: black;
+  line-height: 1em;
+  margin-left: 3px;
+  animation: blink 0.8s infinite;
+  width: 3px;
+  height: 1em;
+}
 .error-page-image {
   width: 100vw;
   height: 100vh;

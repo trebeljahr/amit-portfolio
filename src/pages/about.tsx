@@ -1,5 +1,6 @@
-import React, { useState } from "react"
+import React from "react"
 import Layout from "../components/layout"
+import TextBeingTyped from "../components/textBeingTyped"
 
 const Text = () => {
   const thingsAboutMe = [
@@ -28,11 +29,7 @@ const Text = () => {
       <div className="container">
         <h1>KNOW YOUR NEXT COPYWRITER </h1>
         <h2>Jack of all, master of Copywriting.</h2>
-        <ol>
-          {thingsAboutMe.map((text, index) => (
-            <li key={index}>{text}</li>
-          ))}
-        </ol>
+        <TextBeingTyped texts={thingsAboutMe} />
       </div>
     </Layout>
   )
