@@ -4,6 +4,7 @@ interface LoaderProps {
   loading: boolean
   color: string
 }
+
 export const Loader = ({ loading, color }: LoaderProps) => {
   return (
     <div

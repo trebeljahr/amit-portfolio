@@ -11,7 +11,8 @@ body {
   justify-content: center;
   align-items: center;
 }
-.projects {
+.projects-container {
+  width: 80vw;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -19,9 +20,36 @@ body {
 .project {
   margin: 0;
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   overflow: hidden;
+}
+.contact-container {
+  display: grid;
+  grid-template-areas: "a a" "b c" "d d";
+}
+.contact-container > h1 {
+  grid-area: a;
+}
+.error-page-image {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: brightness(50%);
+}
+.error-page-image > * {
+  object-fit: cover;
+  width: auto;
+}
+#error-page-header {
+  font-size: 5em;
+}
+#error-page-text {
+  font-size: 1.4em;
 }
 .project-header {
   color: white;
@@ -45,11 +73,10 @@ body {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
 }
 .project-image:hover {
-  height: 140%;
-  width: 140%;
-  object-fit: cover;
+  transform: scale(1.5);
 }
 .mobile-menu {
   display: flex;
