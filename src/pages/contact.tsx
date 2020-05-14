@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 const Contact = () => {
   return (
     <Layout>
-      <div>
+      <div className="contact-container">
         <h1> So now you want to get in touch?</h1>
         <div>
           <h2>Mail</h2>
