@@ -1,44 +1,98 @@
 import React from "react"
 import Layout from "../components/layout"
-import img1 from "../assets/projects/1.jpg"
-import img2 from "../assets/projects/2.jpg"
-import img3 from "../assets/projects/3.jpg"
-import img4 from "../assets/projects/4.jpg"
-import img5 from "../assets/projects/5.jpg"
+import { graphql } from "gatsby"
+import Img from "gatsby-image"
 
-const Projects = () => {
+const Projects = ({ data }) => {
+  console.log(data)
   return (
     <Layout>
-      <div className="container">
+      <div className="desktop-container">
         <h1>Projects</h1>
         <h2>
           Here are some of the epic projects I have been working on over the
           past years.
         </h2>
         <div className="projects-container">
-          <Project title={"Project 1"} img={img1} />
-          <Project title={"Project 2"} img={img2} />
-          <Project title={"Project 3"} img={img3} />
-          <Project title={"Project 4"} img={img4} />
-          <Project title={"Project 5"} img={img5} />
+          {data?.allFile?.nodes?.map(
+            (
+              {
+                small,
+                medium,
+                large,
+                xl,
+              }: { small: any; medium: any; large: any; xl: any },
+              index: number
+            ) => {
+              const sources = [
+                small.fluid,
+                {
+                  ...medium.fluid,
+                  media: `(min-width: 500px)`,
+                },
+                {
+                  ...large.fluid,
+                  media: `(min-width: 1000px)`,
+                },
+                {
+                  ...xl.fluid,
+                  media: `(min-width: 2000px)`,
+                },
+              ]
+              return (
+                <Project title={`Project ${index + 1}`}>
+                  <Img className="project-image" fluid={sources}></Img>
+                </Project>
+              )
+            }
+          )}
         </div>
       </div>
     </Layout>
   )
 }
 
+export const query = graphql`
+  query {
+    allFile(filter: { relativeDirectory: { eq: "projects" } }) {
+      nodes {
+        small: childImageSharp {
+          fluid(maxWidth: 500, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+        medium: childImageSharp {
+          fluid(maxWidth: 1000, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+        large: childImageSharp {
+          fluid(maxWidth: 2000, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+        xl: childImageSharp {
+          fluid(maxWidth: 3000, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  }
+`
+
 interface ProjectProps {
   title: string
-  img: any
+  children: any
 }
 
-const Project = ({ title, img }: ProjectProps) => {
+const Project = ({ title, children }: ProjectProps) => {
   return (
     <div className="project">
+      {children}
       <div className="project-header-container">
         <h2 className="project-header">{title}</h2>
       </div>
-      <img className="project-image" src={img} />
     </div>
   )
 }
