@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
+import indiaIcon from "../assets/images/india.svg"
 
 const Contact = () => {
   return (
@@ -22,6 +23,9 @@ const Contact = () => {
         </div>
         <div>
           <h2>Location</h2>
+          <div>
+            <img src={indiaIcon}></img>
+          </div>
           <h3>Delhi, India</h3>
         </div>
         <div>
