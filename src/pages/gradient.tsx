@@ -1,38 +1,89 @@
-import React from "react"
+import React, { useState, useRef, useEffect } from "react"
 import Layout from "../components/layout"
+import { Link } from "gatsby"
 
 const Gradient = () => {
+  const [numberOfGradients, setNumberOfGradients] = useState(1)
+  const loadMore = () => {
+    setNumberOfGradients(old => old + 1)
+  }
+  const gradients = new Array(numberOfGradients).fill(0)
+  const gradientsRef = useRef()
+  const loadNextBatch = () => {
+    const gradientElement = gradientsRef.current as any
+    if (
+      gradientsRef.current &&
+      window.innerHeight + document.documentElement.scrollTop ===
+        gradientElement.offsetHeight
+    ) {
+      loadMore()
+    }
+  }
+  useEffect(() => {
+    window.onscroll = loadNextBatch
+  }, [])
   return (
     <Layout>
-      <div className="gradient-bottom">
-        <h1>Amit Meena</h1>
-      </div>
-      <div className="gradient-top">
-        <h2>Copywriter, Creative Director</h2>
-      </div>
-      <div className="gradient-bottom">
-        <p>
-          FORMER PSEPHOLOGIST (yes, it’s relevant. It means I was an election
-          researcher who travelled across the country for months and talked to
-          people, literally thousands of them. Could ‘data’ be more authentic?)
-        </p>
-      </div>
-      <div className="gradient-top">
-        <p>Portfolio</p>
-      </div>
-      <div className="gradient-bottom">
-        <p>My deepest secrets</p>
-      </div>
-      <div className="gradient-top">
-        <p>Brands I have worked for</p>
-      </div>
-      <div className="gradient-bottom">
-        <p>Contact</p>
-      </div>
-      <div className="gradient-top">
-        <p>About</p>
+      <div className="gradients" ref={gradientsRef}>
+        {gradients.map((_, index) => (
+          <div key={`gradient${index}`}>
+            <SingleGradient index={index} />
+          </div>
+        ))}
       </div>
     </Layout>
+  )
+}
+
+const SingleGradient = ({ index }: { index: number }) => {
+  return (
+    <>
+      <div className="gradient-bottom">
+        <Link to="/about">
+          <h1>Amit Meena </h1>
+        </Link>
+      </div>
+      <div className="gradient-top">
+        <Link to="/about">
+          <h1>Copywriter, Creative Director</h1>
+        </Link>
+      </div>
+      <div className="gradient-bottom">
+        <Link to="/about">
+          <h1>FORMER PSEPHOLOGIST</h1>
+          <h4>
+            (yes, it’s relevant. It means I was an election researcher who
+            travelled across the country for months and talked to people,
+            literally thousands of them. Could ‘data’ be more authentic?)
+          </h4>
+        </Link>
+      </div>
+      <div className="gradient-top">
+        <Link to="/projects">
+          <h1>Portfolio </h1>
+        </Link>
+      </div>
+      <div className="gradient-bottom">
+        <Link to="/deepest-secrets">
+          <h1>My deepest secrets </h1>
+        </Link>
+      </div>
+      <div className="gradient-top">
+        <Link to="/contact">
+          <h1>Brands I have worked for </h1>
+        </Link>
+      </div>
+      <div className="gradient-bottom">
+        <Link to="/contact">
+          <h1>Contact </h1>
+        </Link>
+      </div>
+      <div className="gradient-top">
+        <Link to="/about">
+          <h1>About </h1>
+        </Link>
+      </div>
+    </>
   )
 }
 
