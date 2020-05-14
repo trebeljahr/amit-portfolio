@@ -49,58 +49,54 @@ body {
   font-size: 3em;
   text-align: left;
 }
-.gradient-bottom {
+.morning,
+.evening,
+.night {
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f3904f; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to bottom,
-    #3b4371,
-    #f3904f
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    #3b4371,
-    #f3904f
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.gradient-top {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f3904f; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #3b4371,
-    #f3904f
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #3b4371,
-    #f3904f
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.night {
+  background: #f3904f;
+  background: -webkit-linear-gradient(to top, #3b4371, #353954, #3b4371);
+  background: linear-gradient(to top, #3b4371, #353954, #3b4371);
 }
-.gradient-bottom > a > h4 {
+.morning {
+  background: #f3904f;
+  background: -webkit-linear-gradient(to bottom, #3b4371, #f3904f);
+  background: linear-gradient(to bottom, #3b4371, #f3904f);
+}
+.evening {
+  background: #f3904f;
+  background: -webkit-linear-gradient(to top, #3b4371, #f3904f);
+  background: linear-gradient(to top, #3b4371, #f3904f);
+}
+.morning > a > h4 {
   font-size: 1em;
   font-weight: 500;
 }
-.gradient-top > a,
-.gradient-bottom > a {
+.evening > a,
+.night > a,
+.morning > a {
   color: white;
   max-width: 70%;
-  border: 5px solid white;
+  border: 3px solid white;
   padding: 30px 60px;
 }
+.evening > a:hover,
+.night > a:hover,
+.morning > a:hover {
+  border: 6px solid white;
+}
 
-.gradient-top > a:hover,
-.gradient-bottom > a:hover {
-  transform: scale(1.2, 1.2);
-  border: 5px solid white;
+.evening > a:hover > h1,
+.night > a:hover > h1,
+.morning > a:hover > h1,
+.evening > a:hover > h4,
+.morning > a:hover > h4 {
+  transform: scale(1.1, 1.1);
 }
 
 @keyframes blink {

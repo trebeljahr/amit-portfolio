@@ -13,13 +13,22 @@ const Menu = ({ open, setOpen, ...props }: MenuProps) => {
     <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
       <div className="mobile-menu" tabIndex={tabIndex}>
         <Link to="/" activeStyle={{ textDecoration: "underline" }}>
-          Amit Meena
+          home
+        </Link>
+        <Link to="/404" activeStyle={{ textDecoration: "underline" }}>
+          404
         </Link>
         <Link to="/projects" activeStyle={{ textDecoration: "underline" }}>
           projects
         </Link>
         <Link to="/contact" activeStyle={{ textDecoration: "underline" }}>
-          about
+          contact
+        </Link>
+        <Link
+          to="/deepest-secrets"
+          activeStyle={{ textDecoration: "underline" }}
+        >
+          deepest-secrets
         </Link>
       </div>
     </StyledMenu>

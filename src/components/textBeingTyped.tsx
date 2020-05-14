@@ -11,9 +11,11 @@ const TextBeingTyped = ({
   speed = 100,
   waiting = 2000,
 }: TextBeingTypedProps) => {
-  const [timer, setTimer] = useState<any>(null)
-  const [wait, setWait] = useState<any>(null)
-  const [characterIndex, setCharacterIndex] = useState(0)
+  const [timer, setTimer] = useState(0)
+  const [wait, setWait] = useState(0)
+  const [characterIndex, setCharacterIndex] = useState(
+    Math.floor(Math.random() * texts.length)
+  )
   const [index, setIndex] = useState(0)
 
   const count = () => {
@@ -23,18 +25,24 @@ const TextBeingTyped = ({
   const changeToNextText = () => {
     setIndex(old => (old + 1 >= texts.length ? 0 : old + 1))
     setCharacterIndex(0)
-    setTimer(setInterval(count, speed))
+    setTimer(() => {
+      clearInterval(timer)
+      return setInterval(count, speed)
+    })
   }
 
   useEffect(() => {
     if (characterIndex >= texts[index].string.length) {
       clearInterval(timer)
-      setWait(setTimeout(changeToNextText, waiting))
+      setWait(() => {
+        clearTimeout(wait)
+        return setTimeout(changeToNextText, waiting)
+      })
     }
   }, [characterIndex])
 
   useEffect(() => {
-    setTimer(setInterval(count, speed))
+    setTimer(() => setInterval(count, speed))
     setIndex(0)
     setCharacterIndex(0)
     return () => {
@@ -42,6 +50,7 @@ const TextBeingTyped = ({
       clearTimeout(wait)
     }
   }, [])
+
   const word = texts[index].string.slice(0, characterIndex)
   return (
     <>

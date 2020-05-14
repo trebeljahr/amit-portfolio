@@ -6,7 +6,7 @@ const Text = () => {
   const thingsAboutMe = [
     {
       string:
-        "Mountains AND Beaches. \n Delhi AND Mumbai. \n Federer AND Nadal. \n Rafi sahib AND Kishor da. \n I refuse to pick one, see if you can put me at gunpoint.!",
+        "Mountains AND Beaches. \n Delhi AND Mumbai. \n Federer AND Nadal. \n Rafi sahib AND Kishor da. \n I refuse to pick one, see if you can put me at gunpoint!",
       emoji: "🔪",
     },
     { string: "I watch at least one film a day. No kidding.", emoji: "🎥" },
@@ -48,8 +48,6 @@ const Text = () => {
   return (
     <Layout>
       <div className="container">
-        <h1>KNOW YOUR NEXT COPYWRITER </h1>
-        <h2>Jack of all, master of Copywriting.</h2>
         <TextBeingTyped texts={thingsAboutMe} />
       </div>
     </Layout>
