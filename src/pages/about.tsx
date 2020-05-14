@@ -4,25 +4,46 @@ import TextBeingTyped from "../components/textBeingTyped"
 
 const Text = () => {
   const thingsAboutMe = [
-    `I watch at least one film a day. No kidding.`,
-    `I went to a boarding school at the age of seven and have been independent ever since.`,
-    `Books over kindle.`,
-    `I love the winter sun, and sunrise, and sunsets, and stargazing. You get the idea.`,
-    `I coined the term ‘Unphotogenic’. I haven’t used it much ever since I got a beard though.`,
-    `Mountains AND Beaches.
-        Delhi AND Mumbai.
-        Federer AND Nadal.
-        Rafi sahib AND Kishor da.`,
-    `I refuse to pick one, see if you can put me at gunpoint.`,
-    `I believe RCB is going to lift the trophy someday.`,
-    `I am not a gym freak. `,
-    `Texting Sucks.`,
-    `I have been told that I am ridiculously good at cuddling.`,
-    `Favorite human quality : Warmth`,
-    `I was the lyricist at my college band. `,
-    `House parties > Clubbing`,
-    `I DO NOT skip Ads.`,
-    `I am probably going to use your money to travel 🙃`,
+    {
+      string:
+        "Mountains AND Beaches. \n Delhi AND Mumbai. \n Federer AND Nadal. \n Rafi sahib AND Kishor da. \n I refuse to pick one, see if you can put me at gunpoint.!",
+      emoji: "🔪",
+    },
+    { string: "I watch at least one film a day. No kidding.", emoji: "🎥" },
+    {
+      string:
+        "I went to a boarding school at the age of seven and have been independent ever since.",
+      emoji: "💪",
+    },
+    {
+      string:
+        "I love the winter sun, and sunrise, and sunsets, and stargazing. You get the idea.",
+      emoji: "🌌🌅",
+    },
+    { string: "Books over kindle.", emoji: "📚" },
+    {
+      string:
+        "I coined the term ‘Unphotogenic’. I haven’t used it much ever since I got a beard though.",
+      emoji: "✨🧔🏾✨",
+    },
+    {
+      string: "I believe RCB is going to lift the trophy someday.",
+      emoji: "🏆",
+    },
+    { string: "I am not a gym freak.", emoji: "🏸🏏" },
+    { string: "Texting Sucks.", emoji: "📴" },
+    {
+      string: "I have been told that I am ridiculously good at cuddling.",
+      emoji: "🤗",
+    },
+    { string: "Favorite human quality: Warmth", emoji: "😊" },
+    { string: "I was the lyricist at my college band.", emoji: "🖋" },
+    { string: "House parties > Clubbing.", emoji: "🎉" },
+    { string: "I DO NOT skip Ads.", emoji: "💸" },
+    {
+      string: "I am probably going to use your money to travel.",
+      emoji: "✈️🗺",
+    },
   ]
   return (
     <Layout>

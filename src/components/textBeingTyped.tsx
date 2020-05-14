@@ -1,30 +1,35 @@
 import React, { useEffect, useState, useRef } from "react"
-import typingSounds from "../assets/audio/typing.mp3"
 
 interface TextBeingTypedProps {
-  texts: string[]
+  texts: { string: string; emoji: string }[]
   speed?: number
+  waiting?: number
 }
 
-const TextBeingTyped = ({ texts, speed = 100 }: TextBeingTypedProps) => {
+const TextBeingTyped = ({
+  texts,
+  speed = 100,
+  waiting = 2000,
+}: TextBeingTypedProps) => {
   const [timer, setTimer] = useState<any>(null)
+  const [wait, setWait] = useState<any>(null)
   const [characterIndex, setCharacterIndex] = useState(0)
   const [index, setIndex] = useState(0)
 
   const count = () => {
-    setCharacterIndex(old => old + 1)
+    setCharacterIndex(old => old + (old === texts[index].string.length ? 2 : 1))
   }
 
   const changeToNextText = () => {
     setIndex(old => (old + 1 >= texts.length ? 0 : old + 1))
     setCharacterIndex(0)
-    clearInterval(timer)
     setTimer(setInterval(count, speed))
   }
 
   useEffect(() => {
-    if (characterIndex >= texts[index].length) {
-      changeToNextText()
+    if (characterIndex >= texts[index].string.length) {
+      clearInterval(timer)
+      setWait(setTimeout(changeToNextText, waiting))
     }
   }, [characterIndex])
 
@@ -33,18 +38,18 @@ const TextBeingTyped = ({ texts, speed = 100 }: TextBeingTypedProps) => {
     setIndex(0)
     setCharacterIndex(0)
     return () => {
-      timer && clearInterval(timer)
+      clearInterval(timer)
+      clearTimeout(wait)
     }
   }, [])
-
-  const audioRef = useRef()
+  const word = texts[index].string.slice(0, characterIndex)
   return (
     <>
-      <audio ref={audioRef} src={typingSounds} controls autoPlay />
-      <p className="typing-text">
-        {texts[index].slice(0, characterIndex)}{" "}
-        <span className="blinking-dash" />
-      </p>
+      <h1 className="typing-text">
+        {word}{" "}
+        {word.length === texts[index].string.length && texts[index].emoji}
+        <span className="blinking-dash">|</span>
+      </h1>
     </>
   )
 }
