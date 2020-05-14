@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react"
 import Layout from "../components/layout"
 import { Link } from "gatsby"
+import { debounce } from "lodash"
 
 const Gradient = () => {
   const [numberOfGradients, setNumberOfGradients] = useState(1)
@@ -20,7 +21,7 @@ const Gradient = () => {
     }
   }
   useEffect(() => {
-    window.onscroll = loadNextBatch
+    window.onscroll = debounce(loadNextBatch, 50)
   }, [])
   return (
     <Layout>
