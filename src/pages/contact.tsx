@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <Layout>
       <div className="contact-container">
-        <h1> So now you want to get in touch?</h1>
+        <h1>Conversations are the currency of life. Let’s get rich!</h1>
         <div>
           <h2>Mail</h2>
           <h3>amitmeena@some-mail.com</h3>

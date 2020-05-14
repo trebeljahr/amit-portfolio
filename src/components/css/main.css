@@ -38,7 +38,51 @@ body {
   font-size: 3em;
   text-align: left;
 }
-
+.gradient-bottom {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f3904f; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #3b4371,
+    #f3904f
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #3b4371,
+    #f3904f
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.gradient-top {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f3904f; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #3b4371,
+    #f3904f
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #3b4371,
+    #f3904f
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.gradient-top > h1,
+h2,
+p,
+.gradient-bottom > h1,
+h2,
+p {
+  border: 10px solid white;
+  padding: 30px;
+}
 @keyframes blink {
   0% {
     color: black;
