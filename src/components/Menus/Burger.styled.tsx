@@ -6,7 +6,7 @@ export const StyledBurger = styled.button`
   }
   position: absolute;
   top: 20px;
-  left: 2rem;
+  left: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -20,8 +20,9 @@ export const StyledBurger = styled.button`
   span {
     width: 20px;
     height: 1px;
-    background: ${({ theme, open }) =>
-      open ? theme.primaryDark : theme.primaryLight};
+    background: ${({ open, color }) => {
+      return open ? "black" : color
+    }};
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;

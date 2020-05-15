@@ -9,14 +9,15 @@ import DesktopMenu from "./Menus/Desktop"
 
 interface LayoutProps {
   children: any
+  color?: string
 }
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children, color = "white" }: LayoutProps) => {
   if (typeof window !== `undefined`) {
     return (
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Head />
-        <MobileMenu />
+        <MobileMenu color={color} />
         <DesktopMenu />
         {children}
       </ThemeProvider>

@@ -4,9 +4,8 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const Projects = ({ data }) => {
-  console.log(data)
   return (
-    <Layout>
+    <Layout color="black">
       <div className="desktop-container">
         <div id="projects-intro-text">
           <h1>Projects</h1>

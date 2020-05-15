@@ -4,7 +4,7 @@ import indiaIcon from "./india.svg"
 
 const Contact = () => {
   return (
-    <Layout>
+    <Layout color="black">
       <div className="contact-container">
         <div className="contact-grid">
           <h1 id="contact-heading">

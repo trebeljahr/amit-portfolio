@@ -25,6 +25,7 @@ export const StyledMenu = styled.nav`
     color: ${({ theme }) => theme.primaryDark};
     text-decoration: none;
     transition: color 0.3s linear;
+    margin: 10px;
     @media (max-width: ${({ theme }) => theme.mobile}) {
       text-align: center;
     }
