@@ -4,7 +4,9 @@ import { ThemeProvider } from "styled-components"
 import { GlobalStyles } from "../global"
 import { theme } from "../theme"
 import "./css/main.css"
-import MobileMenu from "./Menus/MobileMenu"
+import MobileMenu from "./Menus/Mobile"
+import DesktopMenu from "./Menus/Desktop"
+
 interface LayoutProps {
   children: any
 }
@@ -15,6 +17,7 @@ const Layout = ({ children }: LayoutProps) => {
         <GlobalStyles />
         <Head />
         <MobileMenu />
+        <DesktopMenu />
         {children}
       </ThemeProvider>
     )

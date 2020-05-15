@@ -13,6 +13,19 @@ body {
   flex-direction: column;
   justify-content: flex-start;
 }
+.desktop-menu {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  height: 10vh;
+}
 .desktop-container,
 .mobile-container,
 .container {
