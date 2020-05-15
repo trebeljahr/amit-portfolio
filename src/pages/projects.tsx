@@ -4,7 +4,6 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const Projects = ({ data }) => {
-  console.log(data)
   return (
     <Layout>
       <div className="desktop-container">
@@ -14,41 +13,36 @@ const Projects = ({ data }) => {
           past years.
         </h2>
         <div className="projects-container">
-          {data?.allFile?.nodes?.map(
-            (
-              {
-                small,
-                medium,
-                large,
-                xl,
-              }: { small: any; medium: any; large: any; xl: any },
-              index: number
-            ) => {
-              const sources = [
-                small.fluid,
-                {
-                  ...medium.fluid,
-                  media: `(min-width: 500px)`,
-                },
-                {
-                  ...large.fluid,
-                  media: `(min-width: 1000px)`,
-                },
-                {
-                  ...xl.fluid,
-                  media: `(min-width: 2000px)`,
-                },
-              ]
-              return (
-                <Project title={`Project ${index + 1}`}>
-                  <Img className="project-image" fluid={sources}></Img>
-                </Project>
-              )
-            }
-          )}
+          {data?.allFile?.nodes?.map(toProjects)}
         </div>
       </div>
     </Layout>
+  )
+}
+
+interface toProjectsProps {
+  small: any
+  medium: any
+  large: any
+  xl: any
+}
+
+const toProjects = (
+  { small, medium, large, xl }: toProjectsProps,
+  index: number
+) => {
+  const sources = [
+    small.fluid,
+    { ...medium.fluid, media: `(min-width: 500px)` },
+    { ...large.fluid, media: `(min-width: 1000px)` },
+    { ...xl.fluid, media: `(min-width: 2000px)` },
+  ]
+  return (
+    <div key={`project-${index}`}>
+      <Project title={`Project ${index + 1}`}>
+        <Img className="project-image" fluid={sources}></Img>
+      </Project>
+    </div>
   )
 }
 

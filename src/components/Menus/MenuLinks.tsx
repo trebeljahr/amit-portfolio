@@ -6,9 +6,6 @@ const MenuLinks = () => (
     <Link to="/" activeStyle={{ textDecoration: "underline" }}>
       home
     </Link>
-    <Link to="/404" activeStyle={{ textDecoration: "underline" }}>
-      404
-    </Link>
     <Link to="/projects" activeStyle={{ textDecoration: "underline" }}>
       projects
     </Link>
@@ -17,6 +14,9 @@ const MenuLinks = () => (
     </Link>
     <Link to="/deepest-secrets" activeStyle={{ textDecoration: "underline" }}>
       deepest-secrets
+    </Link>
+    <Link to="/404" activeStyle={{ textDecoration: "underline" }}>
+      404
     </Link>
   </>
 )

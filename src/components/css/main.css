@@ -13,19 +13,6 @@ body {
   flex-direction: column;
   justify-content: flex-start;
 }
-.desktop-menu {
-  position: fixed;
-  z-index: 5;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: black;
-  height: 10vh;
-}
 .desktop-container,
 .mobile-container,
 .container {
@@ -40,7 +27,7 @@ body {
   align-items: center;
 }
 .projects-container {
-  width: 80vw;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -48,8 +35,8 @@ body {
 .project {
   margin: 0;
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 20vw;
+  height: 20vw;
   overflow: hidden;
 }
 .contact-container {
@@ -109,27 +96,6 @@ body {
   box-shadow: 0px 0px 2px 3px #f3904f;
 }
 
-#deepest-secrets-show {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-#deepest-secrets-list {
-  padding: 20px 18vw;
-  text-align: left;
-  background: white;
-  color: black;
-}
-#deepest-secrets-list > p {
-  padding: 20px;
-  font-size: 2em;
-  text-align: left;
-  text-transform: none;
-}
 .morning,
 .evening,
 .night {
@@ -162,9 +128,9 @@ body {
 .night > a,
 .morning > a {
   color: white;
-  max-width: 70%;
+  max-width: 80%;
   border: 3px solid white;
-  padding: 30px 60px;
+  padding: 30px 20px;
 }
 .evening > a:hover,
 .night > a:hover,
@@ -251,6 +217,75 @@ body {
   align-items: center;
 }
 
-div {
+.desktop-menu {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  height: 5vh;
+  text-transform: uppercase;
+}
+.desktop-menu > a {
+  color: white;
+  margin: 20px;
+}
+
+#deepest-secrets-list {
+  padding: 20px 5vw;
+  text-align: left;
+  background: white;
+  color: black;
+}
+#deepest-secrets-list > p {
+  padding: 5px;
+  font-size: 1.2em;
+  text-align: left;
+  text-transform: none;
+}
+
+#deepest-secrets-show {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.typing-text {
   width: 100%;
+  padding: 10%;
+  font-size: 2em;
+  text-align: left;
+}
+
+@media only screen and (min-width: 767px) {
+  .mobile-menu-container {
+    display: none;
+  }
+  .desktop-menu {
+    display: flex;
+  }
+  .evening > a,
+  .night > a,
+  .morning > a {
+    max-width: 70%;
+    padding: 30px 60px;
+  }
+  #deepest-secrets-list {
+    padding: 20px 18vw;
+  }
+  #deepest-secrets-list > p {
+    padding: 20px;
+    font-size: 2em;
+  }
+  .typing-text {
+    font-size: 3em;
+  }
 }
