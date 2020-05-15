@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   width: 100vw;
   overflow-x: hidden;
@@ -16,8 +19,11 @@ body {
 .desktop-container,
 .mobile-container,
 .container {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,6 +54,71 @@ body {
   padding: 10%;
   font-size: 3em;
   text-align: left;
+}
+.scroll-down-element {
+  position: absolute;
+  left: 0;
+  bottom: 5vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.scroll-down-element > button {
+  color: black;
+  background: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+.scroll-down-element > button:hover {
+  animation: rotate 0.5s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.scroll-down-element > button:focus {
+  outline: 0;
+  box-shadow: 0px 0px 2px 3px #f3904f;
+}
+
+#deepest-secrets-show {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#deepest-secrets-list {
+  padding: 20px 18vw;
+  text-align: left;
+  background: white;
+  color: black;
+}
+#deepest-secrets-list > p {
+  padding: 20px;
+  font-size: 2em;
+  text-align: left;
+  text-transform: none;
 }
 .morning,
 .evening,

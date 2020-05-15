@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef } from "react"
 import Layout from "../components/layout"
 import TextBeingTyped from "../components/textBeingTyped"
 
@@ -45,10 +45,28 @@ const Text = () => {
       emoji: "✈️🗺",
     },
   ]
+  const myRef = useRef()
+  const scrollToRef = (ref: React.MutableRefObject<any>) =>
+    window.scrollTo(0, ref.current.offsetTop)
+  const handleClick = () => scrollToRef(myRef)
   return (
     <Layout>
       <div className="container">
-        <TextBeingTyped texts={thingsAboutMe} />
+        <div id="deepest-secrets-show">
+          <TextBeingTyped texts={thingsAboutMe} />
+          <div className="scroll-down-element">
+            <button onClick={handleClick}>
+              <i className="fas fa-caret-down fa-3x"></i>{" "}
+            </button>
+          </div>
+        </div>
+        <div id="deepest-secrets-list" ref={myRef}>
+          {thingsAboutMe.map((secret, index) => (
+            <p key={`secret-${index}`}>
+              {secret.string} {secret.emoji}
+            </p>
+          ))}
+        </div>
       </div>
     </Layout>
   )
