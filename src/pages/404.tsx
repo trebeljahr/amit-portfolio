@@ -6,9 +6,9 @@ import Img from "gatsby-image"
 const ErrorPage = ({ data }) => {
   const sources = [
     data.file.small.fluid,
-    { ...data.file.medium.fluid, media: "min-width: 500px" },
-    { ...data.file.large.fluid, media: "min-width: 1000px" },
-    { ...data.file.xl.fluid, media: "min-width: 2000px" },
+    { ...data.file.medium.fluid, media: "(min-width: 500px)" },
+    { ...data.file.large.fluid, media: "(min-width: 1000px)" },
+    { ...data.file.xl.fluid, media: "(min-width: 1500px)" },
   ]
   return (
     <Layout>

@@ -4,14 +4,17 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const Projects = ({ data }) => {
+  console.log(data)
   return (
     <Layout>
       <div className="desktop-container">
-        <h1>Projects</h1>
-        <h2>
-          Here are some of the epic projects I have been working on over the
-          past years.
-        </h2>
+        <div id="projects-intro-text">
+          <h1>Projects</h1>
+          <h2>
+            Here are some of the epic projects I have been working on over the
+            past years.
+          </h2>
+        </div>
         <div className="projects-container">
           {data?.allFile?.nodes?.map(toProjects)}
         </div>

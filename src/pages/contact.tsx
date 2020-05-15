@@ -1,36 +1,48 @@
 import React from "react"
 import Layout from "../components/layout"
-import indiaIcon from "../assets/images/india.svg"
+import indiaIcon from "./india.svg"
 
 const Contact = () => {
   return (
     <Layout>
       <div className="contact-container">
-        <h1>Conversations are the currency of life. Let’s get rich!</h1>
-        <div>
-          <h2>Mail</h2>
-          <h3>amitmeena@some-mail.com</h3>
-        </div>
-        <div>
-          <h2>Social Media Stuff</h2>
-          <h3>Behance</h3>
-          <h3>TikTok</h3>
-          <h3>Facebook</h3>
-        </div>
-        <div>
-          <h2>Or... leave me a call/whatsapp</h2>
-          <h3>+019499387210938</h3>
-        </div>
-        <div>
-          <h2>Location</h2>
-          <div>
-            <img src={indiaIcon}></img>
+        <div className="contact-grid">
+          <h1 id="contact-heading">
+            Conversations are the currency of life. Let’s get rich!
+          </h1>
+          <div id="mail-container">
+            <h2>Leave me a mail</h2>
+            <p>
+              <i className="fas fa-paper-plane" /> amitmeena@some-mail.com
+            </p>
           </div>
-          <h3>Delhi, India</h3>
-        </div>
-        <div>
-          <h2>Time Zone</h2>
-          <h3>UTC+5:30</h3>
+          <div id="social-media-container">
+            <h2>Social Media Stuff</h2>
+            <p>
+              <i className="fab fa-behance-square" /> Behance
+            </p>
+            <p>
+              <i className="fab fa-instagram" /> Instagram
+            </p>
+            <p>
+              <i className="fab fa-facebook-square" /> Facebook
+            </p>
+          </div>
+          <div id="phone-container">
+            <h2>...or a call/whatsapp</h2>
+            <p>
+              <i className="fab fa-whatsapp" /> +019499387210938
+            </p>
+          </div>
+          <div id="location-container">
+            <h2>Location</h2>
+            <img src={indiaIcon}></img>
+            <p>Delhi, India</p>
+          </div>
+          <div id="time-zone-container">
+            <h2>Time Zone</h2>
+            <p>UTC+5:30</p>
+          </div>
         </div>
       </div>
     </Layout>
