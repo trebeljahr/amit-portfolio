@@ -1,6 +1,7 @@
-import React, { useRef } from "react"
+import React from "react"
 import Layout from "../components/layout"
 import TextBeingTyped from "../components/textBeingTyped"
+import scrollTo from "gatsby-plugin-smoothscroll"
 
 const Text = () => {
   const thingsAboutMe = [
@@ -45,10 +46,9 @@ const Text = () => {
       emoji: "✈️🗺",
     },
   ]
-  const myRef = useRef()
-  const scrollToRef = (ref: React.MutableRefObject<any>) =>
-    window.scrollTo(0, ref.current.offsetTop)
-  const handleClick = () => scrollToRef(myRef)
+  const handleClick = () => {
+    scrollTo("#deepest-secrets-list")
+  }
   return (
     <Layout>
       <div className="container">
@@ -60,7 +60,7 @@ const Text = () => {
             </button>
           </div>
         </div>
-        <div id="deepest-secrets-list" ref={myRef}>
+        <div id="deepest-secrets-list">
           {thingsAboutMe.map((secret, index) => (
             <p key={`secret-${index}`}>
               {secret.string} {secret.emoji}
