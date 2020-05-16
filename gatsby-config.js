@@ -33,11 +33,5 @@ module.exports = {
         crossOrigin: `use-credentials`,
       },
     },
-    {
-      resolve: `gatsby-plugin-postcss`,
-      options: {
-        postCssPlugins: [require(`postcss-preset-env`)({ stage: 0 })],
-      },
-    },
   ],
 }
