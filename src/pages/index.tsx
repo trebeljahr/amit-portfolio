@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react"
 import Layout from "../components/layout"
 import { Link } from "gatsby"
-import { debounce } from "lodash"
 
 const Gradient = () => {
   const [numberOfGradients, setNumberOfGradients] = useState(1)
@@ -21,7 +20,7 @@ const Gradient = () => {
     }
   }
   useEffect(() => {
-    window.onscroll = debounce(loadNextBatch, 50)
+    window.onscroll = loadNextBatch
   }, [])
   return (
     <Layout>
@@ -40,35 +39,32 @@ const SingleGradient = ({ index }: { index: number }) => {
   return (
     <>
       <div className="evening">
-        <Link to="/projects">
-          <h1>Amit Meena </h1>
+        <Link to="/portfolio">
+          <h1 id="main-header">Amit Meena </h1>
+          <h3>Copywriter, Creative Director</h3>
         </Link>
       </div>
       <div className="night">
-        <Link to="/projects">
-          <h1>Copywriter, Creative Director</h1>
-        </Link>
-      </div>
-      <div className="morning">
-        <Link to="/projects">
+        <Link to="/portfolio">
           <h1>Portfolio </h1>
         </Link>
       </div>
-      <div className="evening">
-        <Link to="/deepest-secrets">
-          <h1>My deepest secrets </h1>
-        </Link>
-      </div>
-      <div className="night">
+      <div className="morning">
         <Link to="/brands">
           <h1>Brands I have worked for </h1>
         </Link>
       </div>
-      <div className="morning">
+      <div className="evening">
         <Link to="/contact">
           <h1>Contact </h1>
         </Link>
       </div>
+      <div className="night">
+        <Link to="/deepest-secrets">
+          <h1>My deepest secrets </h1>
+        </Link>
+      </div>
+      <div className="morning"></div>
       {/* <div className="morning">
         <Link to="/contact">
           <h1>FORMER PSEPHOLOGIST</h1>

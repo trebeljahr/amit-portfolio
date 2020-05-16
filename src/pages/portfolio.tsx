@@ -8,11 +8,11 @@ const Projects = ({ data }) => {
     <Layout color="black">
       <div className="desktop-container">
         <div id="projects-intro-text">
-          <h1>Projects</h1>
-          <h2>
+          <h1>Portfolio</h1>
+          <p>
             Here are some of the epic projects I have been working on over the
             past years.
-          </h2>
+          </p>
         </div>
         <div className="projects-container">
           {data?.allFile?.nodes?.map(toProjects)}

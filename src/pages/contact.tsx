@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import indiaIcon from "./india.svg"
+import indiaIcon from "../assets/images/india.svg"
 
 const Contact = () => {
   return (

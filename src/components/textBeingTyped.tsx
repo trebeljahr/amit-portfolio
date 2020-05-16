@@ -55,8 +55,7 @@ const TextBeingTyped = ({
   return (
     <>
       <h1 className="typing-text">
-        {word}{" "}
-        {word.length === texts[index].string.length && texts[index].emoji}
+        {word} {word.length === texts[index].string.length}
         <span className="blinking-dash">|</span>
       </h1>
     </>

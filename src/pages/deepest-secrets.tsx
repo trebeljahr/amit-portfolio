@@ -56,17 +56,15 @@ const Text = () => {
           <TextBeingTyped texts={thingsAboutMe} />
           <div className="scroll-down-element">
             <button onClick={handleClick}>
-              <i className="fas fa-caret-down fa-3x"></i>{" "}
+              <i className="fas fa-caret-down fa-3x"></i>
             </button>
           </div>
         </div>
-        <div id="deepest-secrets-list">
+        <ol id="deepest-secrets-list">
           {thingsAboutMe.map((secret, index) => (
-            <p key={`secret-${index}`}>
-              {secret.string} {secret.emoji}
-            </p>
+            <li key={`secret-${index}`}>{secret.string}</li>
           ))}
-        </div>
+        </ol>
       </div>
     </Layout>
   )

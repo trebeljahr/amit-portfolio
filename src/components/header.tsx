@@ -5,7 +5,7 @@ const Head = () => {
   return (
     <Helmet defer={false} defaultTitle="Amit Meena Copywriter">
       <link
-        href="https://fonts.googleapis.com/css2?family=Palanquin:wght@100&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Jaldi&family=Karla&family=PT+Sans&family=Palanquin+Dark:wght@500&family=Yanone+Kaffeesatz&display=swap"
         rel="stylesheet"
       />
       <script
