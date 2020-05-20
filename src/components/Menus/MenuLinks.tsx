@@ -9,11 +9,14 @@ const MenuLinks = () => (
     <Link to="/portfolio" activeStyle={{ textDecoration: "underline" }}>
       portfolio
     </Link>
-    <Link to="/contact" activeStyle={{ textDecoration: "underline" }}>
-      contact
+    <Link to="/brands" activeStyle={{ textDecoration: "underline" }}>
+      brands
     </Link>
     <Link to="/deepest-secrets" activeStyle={{ textDecoration: "underline" }}>
       my deepest secrets
+    </Link>
+    <Link to="/contact" activeStyle={{ textDecoration: "underline" }}>
+      contact
     </Link>
   </>
 )

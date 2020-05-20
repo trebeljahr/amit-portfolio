@@ -13,7 +13,7 @@ const Contact = () => {
           <div id="mail-container">
             <h2>Leave me a mail</h2>
             <p>
-              <i className="fas fa-paper-plane" /> amitmeena@some-mail.com
+              <i className="fas fa-paper-plane" /> amitravi.rv@gmail.com
             </p>
           </div>
           <div id="social-media-container">
@@ -31,7 +31,7 @@ const Contact = () => {
           <div id="phone-container">
             <h2>...or a call/whatsapp</h2>
             <p>
-              <i className="fab fa-whatsapp" /> +019499387210938
+              <i className="fab fa-whatsapp" /> +91 98737 74177
             </p>
           </div>
           <div id="location-container">
