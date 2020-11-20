@@ -4,6 +4,6 @@
 
 This is a portfolio website for Amit Meena.
 
-It is build using Netlify, Gatsby and React, and most of it is written in TypeScript! :) 
+It is built using Netlify, Gatsby and React, and most of it is written in TypeScript! :) 
 
 Because Typescript is awesome. 
