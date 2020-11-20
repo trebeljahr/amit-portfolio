@@ -28,9 +28,7 @@ const Gradient = ({ data }) => {
       <div className="gradients" ref={gradientsRef}>
         {gradients.map((_, index) => (
           <div key={`gradient${index}`} style={{ position: "relative" }}>
-            <div className="gradient-containers">
-              <SingleGradient index={index} data={data} />
-            </div>
+            <SingleGradient index={index} data={data} />
             <div className="container-container">
               <div className="links-container">
                 <div style={{ placeSelf: "start start" }}>

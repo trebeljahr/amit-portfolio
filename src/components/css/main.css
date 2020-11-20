@@ -345,23 +345,27 @@ body {
   justify-content: center;
   align-items: center;
 }
-.links-container > div > a {
-  padding: 40px 80px;
-  border: solid white 1px;
-  color: white;
-}
-.gradient-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+
 .container-container {
+  margin-top: 20vh;
+  margin-bottom: 20vh;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 2;
   height: 100%;
 }
+
+.brand-image {
+  width: calc(90vw / 3);
+  height: auto;
+}
+.links-container > div > a {
+  padding: 40px 80px;
+  border: solid white 1px;
+  color: white;
+}
+
 .links-container {
   background-color: transparent;
   width: 100vw;
@@ -371,13 +375,24 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.brand-image {
-  width: calc(90vw / 3);
-  height: auto;
+
+.links-container > div > a {
+  padding: 20px 40px;
+  max-width: 80vw;
+  border: solid white 1px;
+  color: white;
 }
+
 @media only screen and (min-width: 767px) {
   .mobile-menu-container {
     display: none;
+  }
+  .links-container > div > a {
+    padding: 40px 80px;
+  }
+  .container-container {
+    padding-top: 0;
+    padding-bottom: 0;
   }
   .contact-grid > * {
     text-align: center;
