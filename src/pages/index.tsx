@@ -32,7 +32,7 @@ const Gradient = ({ data }) => {
             <div className="container-container">
               <div className="links-container">
                 <div style={{ placeSelf: "start start" }}>
-                  <Link to="/portfolio">
+                  <Link to="/">
                     <h1 id="main-header">Amit Meena </h1>
                     <h3>Copywriter, Creative Director</h3>
                   </Link>

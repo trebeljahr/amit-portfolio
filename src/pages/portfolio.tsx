@@ -8,10 +8,13 @@ const Projects = ({ data }) => {
     <Layout color="black">
       <div className="desktop-container">
         <div id="projects-intro-text">
-          <h1>Portfolio</h1>
+          {/* <h1>Portfolio</h1> */}
           <p>
-            Here are some of the epic projects I have been working on over the
-            past years.
+            This is part of the webpage is still work in progress. I am working
+            on gathering the materials to represent the work I have been doing
+            over the last years at the moment. Meanwhile, you can look at some
+            beautiful stock photos from Unsplash with some placeholder hover
+            animations. 😉
           </p>
         </div>
         <div className="projects-container">
