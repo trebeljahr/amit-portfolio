@@ -1,12 +1,10 @@
-import React, { useState } from "react"
+import React from "react"
 import Layout from "../components/layout"
-import Typewriter from "../components/typewriter"
 
 const Impressum = () => {
   return (
     <Layout>
       <div className="container">
-        <Typewriter />
         Impressum
         <div>
           Icons made by{" "}
